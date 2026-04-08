@@ -5,7 +5,7 @@
   "description": "Advanced open-source relational database. The world's most advanced open source database.",
   "version": "1.0.0",
   "app_version": "17",
-  "icon": "icon.svg",
+  "icon": "assets/icon.png",
   "category": "database",
   "service_class": "data_service",
   "tags": ["database", "sql", "relational", "postgres"],
