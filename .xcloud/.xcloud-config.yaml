@@ -64,9 +64,10 @@ volumes:
   persistent:
     - pgdata
 credentials:
-  type: connection_string
-  template: 'postgresql://{{ admin_user }}:{{ admin_password }}@{{ server_ip }}:{{ ports.postgres }}/{{ database_name }}'
   display:
+    -
+      label: 'Connection String'
+      value: 'postgresql://{{ admin_user }}:{{ admin_password }}@{{ server_ip }}:{{ ports.postgres }}/{{ database_name }}'
     -
       label: Host
       value: '{{ server_ip }}'
@@ -83,6 +84,5 @@ credentials:
       label: Password
       value: '{{ admin_password }}'
       secret: true
-  copyable: 'postgresql://{{ admin_user }}:{{ admin_password }}@{{ server_ip }}:{{ ports.postgres }}/{{ database_name }}'
 post_install:
   message: 'PostgreSQL is running. Connection details are shown below. By default, it is only accessible from this server.'
