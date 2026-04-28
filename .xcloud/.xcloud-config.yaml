@@ -16,8 +16,8 @@ tags:
   - relational
   - postgres
 files:
-  compose: docker-compose.yml.tpl
-  env: .env.tpl
+  compose: docker-compose.yml
+  env: .env
 requirements:
   min_ram_mb: 512
   min_cpu_cores: 1
@@ -67,22 +67,22 @@ credentials:
   display:
     -
       label: 'Connection String'
-      value: 'postgresql://{{ admin_user }}:{{ admin_password }}@{{ server_ip }}:{{ ports.postgres }}/{{ database_name }}'
+      value: 'postgresql://${ADMIN_USER}:${ADMIN_PASSWORD}@${SERVER_IP}:${PORT_POSTGRES}/${DATABASE_NAME}'
     -
       label: Host
-      value: '{{ server_ip }}'
+      value: '${SERVER_IP}'
     -
       label: Port
-      value: '{{ ports.postgres }}'
+      value: '${PORT_POSTGRES}'
     -
       label: Database
-      value: '{{ database_name }}'
+      value: '${DATABASE_NAME}'
     -
       label: Username
-      value: '{{ admin_user }}'
+      value: '${ADMIN_USER}'
     -
       label: Password
-      value: '{{ admin_password }}'
+      value: '${ADMIN_PASSWORD}'
       secret: true
 post_install:
   message: 'PostgreSQL is running. Connection details are shown below. By default, it is only accessible from this server.'
